@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "./proto";
+
+message MunitionRequest {
+    int64 ID = 1;
+    int64 AT = 2;
+    int64 MP = 3;
+    string Message = 4;
+}
+
+message MunitionReply {
+    bool result = 1;
+}
+
+service SolicitarMunicion {
+    rpc SolicitarM(MunitionRequest) returns (MunitionReply);
+}
