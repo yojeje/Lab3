@@ -4,6 +4,14 @@ package grpc;
 
 option go_package = "./proto";
 
+message IDReply {
+    int64 ID = 1;
+}
+
+message IDRequest {
+    int64 ID = 1;
+}
+
 message MunitionRequest {
     int64 ID = 1;
     int64 AT = 2;
@@ -17,4 +25,8 @@ message MunitionReply {
 
 service SolicitarMunicion {
     rpc SolicitarM(MunitionRequest) returns (MunitionReply);
+}
+
+service IDEquipo {
+    rpc IdentificarEquipo(IDReply) returns (IDRequest);
 }
